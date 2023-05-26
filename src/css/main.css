@@ -1,9 +1,47 @@
 body{
-    background-color: blue;
+    background-color: #434242;
     color: white;
+    font-weight: 300;
 }
 
 .header{
-    background-color: chartreuse;
-    color: blueviolet;
+    background-color:#191717;
+    color: #fff;
+    font-weight: 600;
+    padding: 25px 100px;
+}
+
+main{
+    margin: 50px 100px;
+    width: 50%;
+    float: left;
+}
+
+aside{
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 5%;
+    float: left;
+}
+
+form input, form button{
+    width: 90%;
+    padding: 15px 5%;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border: 0;
+    background: #222;
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+}
+
+form button:hover{
+    transform: scale(1.1);
+}
+
+.user{
+    background-color: #67758a;
+    margin-bottom: 50px;
+    padding: 20px;
 }
