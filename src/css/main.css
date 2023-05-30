@@ -24,8 +24,19 @@ aside{
     float: left;
 }
 
-form input, form button{
+form input{
     width: 90%;
+    padding: 15px 5%;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border: 0;
+    background: #222;
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+}
+form button{
+    width: 100%;
     padding: 15px 5%;
     font-weight: 300;
     margin-bottom: 10px;
@@ -44,4 +55,22 @@ form button:hover{
     background-color: #67758a;
     margin-bottom: 50px;
     padding: 20px;
+}
+
+.editButton {
+    float: right;
+    color: #191717;
+    cursor: pointer;
+    transform: scale(2);
+}
+ .deleteButton{
+    float: right;
+    margin-right: 25px;
+    color: #191717;
+    cursor: pointer;
+    transform: scale(2);
+}
+
+.editButton:hover, .deleteButton:hover{
+    opacity: 0.5;
 }

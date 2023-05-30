@@ -26,29 +26,20 @@ class App extends React.Component {
         }
 
         this.AddUser = this.AddUser.bind(this)
-        this.onInputClick = this.onInputClick.bind(this)
+        this.EditUser = this.EditUser.bind(this)
+        this.DeleteUser = this.DeleteUser.bind(this)
     }
 
 
     render(){
       return(
         <div>
-          {/* <Header title='Privet!'/>
-          <Header title='Privet!!!'/>
-          <Header title='!!!!!'/>
-          <h1>Hello world!</h1>
-          <input 
-            onClick={this.onInputClick}
-            onChange={data => this.setState({userText: data.target.value})}
-            onMouseEnter={this.onInputMouseOver}/>
-            <h3>{this.state.counter}</h3>
-            <h3>{this.state.userText}</h3> */}
             <Header title='Список пользователей'/>
             <main>
-              <UserList users={this.state.users}/>
+              <UserList users={this.state.users} onDelete={this.DeleteUser} onEdit={this.EditUser}/>
             </main>
             <aside>
-              <AddUser onAdd={this.AddUser}/>
+              <AddUser onSave={this.AddUser}/>
             </aside>
         </div>
       )
@@ -57,6 +48,21 @@ class App extends React.Component {
     AddUser(user){
       const userId = this.state.users.length + 1
       this.setState({users: [...this.state.users, {userId, ...user}]})
+    }
+
+    EditUser(user){
+      var allUsers = this.state.users
+      var userToEditIndex = allUsers.findIndex(x => x.id === user.id)
+
+      allUsers[userToEditIndex] = user
+      
+      this.setState({users: []}, () => this.setState({users: [...allUsers]}))
+    }
+
+    DeleteUser(id){
+      this.setState({
+        users: this.state.users.filter(x => x.id !== id)
+      })
     }
 
     onInputClick(){

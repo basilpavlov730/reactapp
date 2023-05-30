@@ -8,7 +8,7 @@ class UserList extends React.Component{
             <div>
                 { this.props.users.map(user => 
                     <div key={user.id}>
-                        <User userItem={user}/>
+                        <User userItem={user} onDelete={this.props.onDelete} onEdit={this.props.onEdit}/>
                     </div>)}
             </div>
         )
